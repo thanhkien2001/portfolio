@@ -1,0 +1,162 @@
+@import "../../_globalColor";
+
+.animated-svg-container {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  overflow: visible;
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+}
+
+/* Keyframe Animations */
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(-1.5deg);
+  }
+}
+
+@keyframes floatMedium {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes flowDash {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rotateGear {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseBeacon {
+  0% {
+    r: 4px;
+    opacity: 1;
+  }
+  100% {
+    r: 16px;
+    opacity: 0;
+  }
+}
+
+@keyframes atomSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmerCode {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.anim-float-1 {
+  animation: floatSlow 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.anim-float-2 {
+  animation: floatReverse 7s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.anim-float-3 {
+  animation: floatMedium 5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.anim-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.anim-cursor {
+  animation: blinkCursor 1s step-end infinite;
+}
+
+.anim-dash {
+  stroke-dasharray: 6 6;
+  animation: flowDash 2s linear infinite;
+}
+
+.anim-dash-fast {
+  stroke-dasharray: 8 8;
+  animation: flowDash 1.2s linear infinite;
+}
+
+.anim-gear {
+  animation: rotateGear 12s linear infinite;
+  transform-origin: center;
+}
+
+.anim-atom {
+  animation: atomSpin 16s linear infinite;
+  transform-origin: center;
+}
+
+.anim-beacon {
+  animation: pulseBeacon 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+

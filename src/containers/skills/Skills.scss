@@ -1,0 +1,75 @@
+@import "../../_globalColor";
+
+.skills-main-div {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills-text-div {
+  margin-left: 50px;
+}
+
+.skills-main-div > * {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.skills-image-div > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.skills-heading {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.skills-text-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.skills-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 10px 0;
+}
+
+.subTitle {
+  color: $subTitle;
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+  .skills-heading {
+    font-size: 34px;
+  }
+}
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 26px;
+    text-align: center;
+  }
+  .skills-main-div {
+    flex-direction: column;
+  }
+  .skills-text-div {
+    margin-left: 0px;
+    margin: 20px 0;
+  }
+  .skills-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .skills-text-subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .skills-image-div {
+    order: 2;
+  }
+}
