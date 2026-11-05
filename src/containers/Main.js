@@ -16,7 +16,14 @@ import ScrollToTopButton from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
-import {splashScreen} from "../portfolio";
+import {
+  splashScreen,
+  openSource,
+  blogSection,
+  talkSection,
+  twitterDetails,
+  podcastSection
+} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
 import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
@@ -56,13 +63,13 @@ const Main = () => {
             <StackProgress />
             <Education />
             <WorkExperience />
-            <Projects />
+            {openSource.display && <Projects />}
             <StartupProject />
             <Achievement />
-            <Blogs />
-            <Talks />
-            <Twitter />
-            <Podcast />
+            {blogSection.display && <Blogs />}
+            {talkSection.display && <Talks />}
+            {twitterDetails.display && <Twitter />}
+            {podcastSection.display && <Podcast />}
             <Profile />
             <Footer />
             <ScrollToTopButton />

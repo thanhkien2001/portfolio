@@ -1,51 +1,14 @@
-import React, {useState, useEffect, lazy, Suspense} from "react";
-import {openSource} from "../../portfolio";
-import Contact from "../contact/Contact";
-import Loading from "../loading/Loading";
+import React from "react";
+import GithubProfileCard from "../../components/githubProfileCard/GithubProfileCard";
+import userAvatar from "../../assets/images/thanhkien.jpg";
 
-const renderLoader = () => <Loading />;
-const GithubProfileCard = lazy(() =>
-  import("../../components/githubProfileCard/GithubProfileCard")
-);
 export default function Profile() {
-  const [prof, setrepo] = useState([]);
-  function setProfileFunction(array) {
-    setrepo(array);
-  }
+  const profileData = {
+    name: "Chế Thanh Kiên",
+    bio: "Fullstack Developer with 2+ years of experience in Web/Mobile App development and RESTful APIs.",
+    avatarUrl: userAvatar,
+    location: "Quang Ngai, Vietnam"
+  };
 
-  useEffect(() => {
-    if (openSource.showGithubProfile === "true") {
-      const getProfileData = () => {
-        fetch("/profile.json")
-          .then(result => {
-            if (result.ok) {
-              return result.json();
-            }
-          })
-          .then(response => {
-            setProfileFunction(response.data.user);
-          })
-          .catch(function (error) {
-            console.error(
-              `${error} (because of this error GitHub contact section could not be displayed. Contact section has reverted to default)`
-            );
-            setProfileFunction("Error");
-            openSource.showGithubProfile = "false";
-          });
-      };
-      getProfileData();
-    }
-  }, []);
-  if (
-    openSource.showGithubProfile === "true" &&
-    !(typeof prof === "string" || prof instanceof String)
-  ) {
-    return (
-      <Suspense fallback={renderLoader()}>
-        <GithubProfileCard prof={prof} key={prof.id} />
-      </Suspense>
-    );
-  } else {
-    return <Contact />;
-  }
+  return <GithubProfileCard prof={profileData} />;
 }
