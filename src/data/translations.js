@@ -195,7 +195,7 @@ const translations = {
             "Specialized Multi-Vendor e-commerce platform for the elevator industry. Enables diverse vendors to list products, components, and services with a smart automated quoting mechanism, optimizing connections and transactions between businesses and clients.",
           techStack: ["Vue 3", "Laravel", "Redis", "MultiVendor"],
           btnText: "Visit Website",
-          btnUrl: "https://vnliftforum.com"
+          btnUrl: "https://vietnamelevatorexpo.com/"
         },
         {
           image: require("../assets/images/tonGameLogo.png"),
