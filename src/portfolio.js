@@ -312,7 +312,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://vnliftforum.com"
+          url: "https://vietnamelevatorexpo.com/"
         }
       ]
     },
