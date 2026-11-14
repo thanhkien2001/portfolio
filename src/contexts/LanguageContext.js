@@ -5,11 +5,11 @@ export const LanguageContext = createContext();
 
 export const LanguageProvider = ({children}) => {
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem("language") || "vi"; // Default to Vietnamese for the user!
+    return localStorage.getItem("language") || "en"; // Default to Vietnamese for the user!
   });
 
   const toggleLanguage = () => {
-    const nextLang = lang === "vi" ? "en" : "vi";
+    const nextLang = lang === "en" ? "vi" : "en";
     setLang(nextLang);
     localStorage.setItem("language", nextLang);
   };
@@ -19,7 +19,7 @@ export const LanguageProvider = ({children}) => {
     localStorage.setItem("language", newLang);
   };
 
-  const t = translations[lang] || translations.vi;
+  const t = translations[lang] || translations.en;
 
   return (
     <LanguageContext.Provider value={{lang, toggleLanguage, changeLanguage, t}}>
